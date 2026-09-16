@@ -1,0 +1,12 @@
+// Microsoft Sentinel - Multiple Failed Windows Logon Attempts
+// Windows Security Event ID 4625
+// SOC Lab Detection
+
+SecurityEvent
+| where EventID == 4625
+| summarize FailedLogons = count(),
+            FirstAttempt = min(TimeGenerated),
+            LastAttempt = max(TimeGenerated)
+    by Account, Computer, IpAddress
+| where FailedLogons >= 5
+| order by FailedLogons desc
