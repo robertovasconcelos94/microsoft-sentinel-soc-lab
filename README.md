@@ -87,14 +87,37 @@ The activity was intentionally generated as part of the SOC lab and did not repr
 
 ## 📁 Evidence
 
-Evidence from the investigation includes:
+### Incident Overview
 
-•⁠  ⁠Microsoft Sentinel incident report
-•⁠  ⁠Windows Event ID 4625 detection
-•⁠  ⁠Sentinel analytics rule
-•⁠  ⁠Incident classification and resolution
-•⁠  ⁠MITRE ATT&CK mapping
-•⁠  ⁠Screenshots from the investigation workflow
+The incident was generated after multiple failed Windows authentication attempts were detected by Microsoft Sentinel.
+
+![Microsoft Sentinel Incident Overview](1.jpeg)
+
+The incident was classified as *Medium severity, mapped to **Credential Access, and resolved as **Benign Positive — Security Testing*.
+
+### MITRE ATT&CK Mapping
+
+Microsoft Sentinel mapped the detected activity to the *Credential Access* tactic in the MITRE ATT&CK framework.
+
+![MITRE ATT&CK Credential Access](2.jpeg)
+
+### Alert Supporting Data
+
+The analytics rule generated the *Multiple Failed Logon Attempts - Windows* alert from the Windows security events collected during the lab.
+
+![Sentinel Alert Supporting Data](3.jpeg)
+
+### Detection Query
+
+The KQL detection logic used in this project is available here:
+
+[⁠ failed-logon-detection.kql ⁠](detections/failed-logon-detection.kql)
+
+### Full Incident Report
+
+The complete Microsoft Sentinel incident report exported after the investigation is available here:
+
+[⁠ Incident 2.pdf ⁠](Incident%202.pdf)
 
 ## 🚀 Future Improvements
 
